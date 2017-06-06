@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         
+        <title>Hujjatlar - har xil turdagi hujjatlar to'plami</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="MDBFree\css\mdb.css" rel="stylesheet">
+        
+        <link rel="stylesheet" media="screen" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Allura|Open+Sans" rel="stylesheet">
+        
+         <!--<script src="js\tinymce\tinymce.min.js"></script>-->
+         <!--<script src="bower_components\tinymce\tinymce.js"></script>-->
+        
+        
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+         
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-centered">
+                <div class="search">
+                    <input type="search" name="" id="searchHujjat" class="form-control" value="" required="required" placeholder="Kerakli hujjat nomini yozing">
+                </div>
+            </div>
+        </div>
+    </div>
+        
+     
+     <div class="results">
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-6">
+                     <div class="grid">
+                         <figure class="effect-ruby card">
+                             <img alt="img13" src="img/tarjimai_hol6.jpg">
+                             <figcaption>
+                                 <h2 style="font-family: 'Allura', cursive;">Tarjimai <span>hol</span></h2>
+                                 <p>shaxs tomonidan o'z shaxsiy hayoti va faoliyati haqida bayon qilingan yozuv.</p>
+                                 <a href="tarjimai_hol.html"></a>
+                             </figcaption>
+                            </figure>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 ">
+                    <div class="grid ">
+                        <figure class="effect-ruby card ">
+						    <img alt="img14" src="img/tarjimai_hol4.jpg">
+                            <figcaption>
+                                <h2>Ariza</h2>
+                                <p>Coming soon</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm-6 ">
+                    <div class="grid ">
+                        <figure class="effect-ruby card ">
+						    <img alt="img14" src="img/resume.jpg">
+                            <figcaption>
+                                <h2>Rezyume</h2>
+                                <p>Coming soon</p>
+                            </figcaption>			
+                        </figure>
+                    </div>
+                </div>
+            
+            </div>
+        </div>		
+    </div>
+					
+				
+         
+
+         
+         
+         <!-- Latest compiled and minified JS -->
+         <script src="https://code.jquery.com/jquery.js"></script>
+         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+         <script src="app.js"></script>
+         <script src="js/holmes.js"></script>
+
+<script>
+  // holmes setup
+  var h = new holmes({
+    input: '.search input',
+    find: '.results div',
+    
+    mark: false,
+    hiddenAttr: true,
+    class: {
+      visible: 'visible',
+      hidden: 'hidden'
+    }
+  });
+
+  // show all of the options
+  document.getElementById('more').addEventListener('click',function(e){
+    e.preventDefault();
+    document.getElementById('full-doc').classList.toggle('hidden');
+  });
+
+  // Toggle clicked class
+  var actions = document.querySelectorAll('[data-tooltip]');
+
+  for (var i = 0; i < actions.length; i++ ) {
+    actions[i].addEventListener('click', function() {
+      if (this.classList.contains('clicked')) {
+        this.classList.remove('clicked')
+      } else {
+        this.classList.add('clicked')
+      }
+    })
+  }
+
+  // toggle for showing hidden elements
+  document.querySelector('.visible').addEventListener('click', function(e) {
+    document.querySelector('.results').classList.toggle('classes');
+  });
+
+  document.querySelector('.mark').addEventListener('click',function(){
+    h.stop().then(function(){
+      h.options.mark = !h.options.mark;
+      h.start();
+      // hack to make it run at button click
+      h.input.dispatchEvent(new Event('input'));
+    })
+  });
+  </script>
+
+       
+    </body>
+</html>
